@@ -1,0 +1,45 @@
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600&display=swap');
+
+
+.navbar  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;   
+}
+
+.logo {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+
+    color: #0055a4;
+    margin-left: 150px;
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    margin-right: 300px;
+    cursor: pointer;
+}
+
+.right > ul {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    /* identical to box height */
+
+
+    color: #37495F;
+}
+
+.right > ul:hover {
+    color: #121f2e;
+}
+
+
