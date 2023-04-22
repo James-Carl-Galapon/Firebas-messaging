@@ -3,6 +3,7 @@ import { addDoc, collection, serverTimestamp, onSnapshot, query, where ,orderBy 
 import { auth,db } from "../firebase-config"
 import '../styles/Chat.css'
 
+
 export const Chat = (props) => {
     const [newMessage, setNewMessage] = useState("");
     const {room} = props
@@ -36,14 +37,34 @@ export const Chat = (props) => {
         
     }
 
+    
+
+
+
     return <div className="chat-app">
         <div className="header"> <h1>
          {room.toUpperCase()}</h1></div>
-        <div className="Messages">{messages.map((message) => <div className="message" key={message.id}>
-            <span className="user">{message.user}</span>
-            {message.text}
-        </div>)}</div>
 
+         <div className="messages-container">
+
+
+         <div className={'messages'}>{messages.map((message) => 
+            
+            <div className={auth.currentUser.displayName == message.user ? "message" : 'message2'} key={message.id}>
+                
+            <div className="message-text">
+            <span>{message.user.split(' ')[0]}: </span>
+                {message.text}
+            </div>
+            
+            {/* {console.log(currentU == message.user)} */}
+
+
+        </div>)}
+        </div>
+
+
+         </div> 
         <form className="new-message-form" onSubmit={handleSubmit}>
             <input className="new-message-input" placeholder="type your message here" 
             onChange={(e) => setNewMessage(e.target.value)}
